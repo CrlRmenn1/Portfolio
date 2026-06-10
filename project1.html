@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Breakdown | Case Studies</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<style>
+    /* ==========================================================================
+   Showcase Subpage Layout Matrix Adjustments
+   ========================================================================== */
+
+.showcase-page {
+    background-color: var(--raw-black);
+}
+
+header nav ul li a.active-link {
+    color: var(--ice-white);
+    border-bottom: 2px solid #3b82f6;
+    padding-bottom: 4px;
+}
+
+/* --- Hero Banner Modification --- */
+.showcase-hero {
+    min-height: 45vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 160px 6% 40px;
+    background: linear-gradient(180deg, var(--navy-abyss) 0%, var(--raw-black) 100%);
+    position: relative;
+    border-bottom: 1px solid var(--subtle-border);
+}
+
+.hero-title-container {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+}
+
+.hero-title-container h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+}
+
+.hero-title-container h1 span {
+    color: #3b82f6;
+}
+
+.hero-title-container p {
+    color: var(--slate-muted);
+    font-size: 1.1rem;
+}
+
+/* --- Portrait Frame System Mechanics --- */
+.showcase-container.portrait-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 100px 6%;
+}
+
+.portrait-layout .showcase-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 60px;
+    background-color: var(--card-surface);
+    padding: 45px;
+    border-radius: 12px;
+    border: 1px solid rgba(235, 241, 252, 0.02);
+    transition: border-color 0.4s ease;
+}
+
+.portrait-layout .showcase-item:hover {
+    border-color: var(--subtle-border);
+}
+
+.portrait-layout .showcase-item.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Perfect Portrait Calculations */
+.portrait-frame {
+    flex: 0.7;
+    max-width: 260px;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid var(--subtle-border);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+    background-color: var(--raw-black);
+}
+
+.portrait-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.portrait-layout .showcase-item:hover .portrait-frame img {
+    transform: scale(1.02);
+}
+
+/* --- Typographical Details Panels --- */
+.portrait-layout .showcase-details {
+    flex: 1.3;
+}
+
+.detail-header-group {
+    margin-bottom: 20px;
+}
+
+.portrait-layout .showcase-details h2 {
+    font-size: 1.85rem;
+    font-weight: 700;
+    margin-top: 4px;
+    letter-spacing: -0.5px;
+}
+
+.module-description {
+    color: var(--slate-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+/* Modern Tech Badges with embedded FontAwesome Icons */
+.portrait-layout .tech-stack {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.portrait-layout .tech-stack span {
+    background-color: rgba(7, 25, 61, 0.5);
+    color: var(--ice-white);
+    border: 1px solid rgba(235, 241, 252, 0.06);
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.portrait-layout .tech-stack span i {
+    color: #3b82f6;
+    font-size: 0.85rem;
+}
+
+/* --- Mobile Viewport Adjustments --- */
+@media (max-width: 850px) {
+    .portrait-layout .showcase-item, 
+    .portrait-layout .showcase-item.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: 35px;
+        padding: 30px 20px;
+    }
+
+    .portrait-frame {
+        max-width: 220px;
+        width: 100%;
+    }
+
+    .portrait-layout .showcase-details h2 {
+        font-size: 1.5rem;
+    }
+
+    .portrait-layout .tech-stack {
+        justify-content: center;
+    }
+}
+</style>
+
+<body class="showcase-page">
+
+    <!-- Global Navigation Hook -->
+    <header>
+        <div class="logo"><a href="index.html">C<span>R</span></a></div>
+        <nav>
+            <ul>
+                <li><a href="index.html#hero">Overview</a></li>
+                <li><a href="index.html#projects">Work</a></li>
+                <li><a href="index.html#about">Profile</a></li>
+                <li><a href="index.html#contact">Connect</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Asymmetric Banner Header -->
+    <section class="showcase-hero">
+        <div class="hero-blur-backdrop"></div>
+        <div class="hero-title-container">
+            <span class="eyebrow-tag">Interface Deep Dive</span>
+            <h1>Mobile System <span>Architectures</span></h1>
+            <p>A rigorous examination of production workflows, view controllers, and front-end interface layouts.</p>
+        </div>
+    </section>
+
+    <!-- Structural Layout: Split Component Feed -->
+    <main class="showcase-container portrait-layout">
+
+        <!-- Entry 01: Schedule Mechanics -->
+        <article class="showcase-item">
+            <div class="portrait-frame">
+                <img src="pictures\Portfolio\955c9153-8900-468e-9204-cc3ce9925b33.jpg" alt="Schedule Application Interface View">
+            </div>
+            <div class="showcase-details">
+                <div class="detail-header-group">
+                    <span class="project-category">Core Module</span>
+                    <h2>Schedule Management</h2>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- Entry 02: Profile Data (Alternating Grid Structure) -->
+        <article class="showcase-item reverse">
+            <div class="portrait-frame">
+                <img src="pictures\Portfolio\a5925135-b721-49a8-8b32-dfb4922f1dfa.jpg" alt="User Profile Configuration View">
+            </div>
+            <div class="showcase-details">
+                <div class="detail-header-group">
+                    <span class="project-category">Identity Layer</span>
+                    <h2>Dynamic Identity Profiles</h2>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- Entry 03: Service Integrations -->
+        <article class="showcase-item">
+            <div class="portrait-frame">
+                <img src="pictures\Portfolio\c587fa96-a7ad-48d1-b13a-ccf615822dba.jpg" alt="Service Discovery Application View">
+            </div>
+            <div class="showcase-details">
+                <div class="detail-header-group">
+                    <span class="project-category">Distribution</span>
+                    <h2>Service Dispatch Matrix</h2>
+                </div>
+
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Structural Footer Platform -->
+    <footer>
+        <div class="footer-bottom">
+            <p class="copyright">&copy; 2026 CarlRamen. All engineering rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

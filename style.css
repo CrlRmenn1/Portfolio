@@ -1,0 +1,716 @@
+/* --- Core Structural Design System Tokens --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Verbatim Color Palette Mapping from image_ffd342.png */
+:root {
+    --raw-black: #000000;
+    --navy-abyss: #07193D;
+    --ice-white: #EBF1FC;
+    --slate-muted: #64748b;
+    --card-surface: #0a0f1d;
+    --subtle-border: rgba(235, 241, 252, 0.08);
+}
+
+body {
+    background-color: var(--raw-black);
+    color: var(--ice-white);
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+/* --- Navigation Shell --- */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(16px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 6%;
+    z-index: 1000;
+    border-bottom: 1px solid var(--subtle-border);
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #3b82f6;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 32px;
+}
+
+nav ul li a {
+    color: var(--slate-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--ice-white);
+}
+
+/* --- Asymmetric Hero Dashboard Layout --- */
+.hero-split-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 6% 60px;
+    background: radial-gradient(circle at 80% 20%, var(--navy-abyss) 0%, var(--raw-black) 60%);
+    gap: 40px;
+}
+
+.hero-left-panel {
+    flex: 1.3;
+}
+
+.eyebrow-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #3b82f6;
+    background: rgba(59, 130, 246, 0.1);
+    padding: 6px 14px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 24px;
+}
+
+.hero-left-panel h1 {
+    font-size: 3.75rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    margin-bottom: 35px;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, var(--ice-white) 40%, var(--slate-muted));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-cta-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 14px 28px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--ice-white);
+    color: var(--raw-black);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--ice-white);
+    box-shadow: 0 0 0 1px var(--ice-white);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--ice-white);
+    box-shadow: 0 0 0 1px rgba(235, 241, 252, 0.2);
+}
+
+.btn-secondary:hover {
+    box-shadow: 0 0 0 1px var(--ice-white);
+}
+
+.hero-right-panel {
+    flex: 0.9;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-hero-card {
+    background-color: var(--card-surface);
+    border: 1px solid var(--subtle-border);
+    padding: 24px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 360px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+
+.profile-frame {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.profile-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-meta h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.profile-meta p {
+    font-size: 0.85rem;
+    color: var(--slate-muted);
+}
+
+/* --- Section Global Structure --- */
+section {
+    padding: 100px 6%;
+    border-top: 1px solid var(--subtle-border);
+}
+
+section h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+}
+
+section h2 span {
+    color: #3b82f6;
+}
+
+/* --- Advanced Hub Grid Architecture --- */
+.showcase-hub {
+    background-color: var(--raw-black);
+}
+
+.section-header-left {
+    max-width: 600px;
+    margin-bottom: 60px;
+}
+
+.section-header-left p {
+    color: var(--slate-muted);
+    font-size: 1.05rem;
+}
+
+.asymmetric-project-grid {
+    display: flex;
+    gap: 32px;
+}
+
+.project-card-large {
+    flex: 1.2;
+    background: linear-gradient(145deg, var(--navy-abyss) 0%, var(--card-surface) 100%);
+    border: 1px solid var(--subtle-border);
+    padding: 48px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-meta-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #3b82f6;
+    letter-spacing: 1.5px;
+    margin-bottom: 40px;
+}
+
+.project-card-large h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.project-card-large p {
+    color: var(--ice-white);
+    opacity: 0.8;
+    font-size: 1.05rem;
+    max-width: 480px;
+    margin-bottom: 40px;
+}
+
+.card-tech-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.card-tech-row span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    background-color: rgba(235, 241, 252, 0.05);
+    padding: 6px 14px;
+    border-radius: 4px;
+    border: 1px solid rgba(235, 241, 252, 0.1);
+}
+
+.action-link {
+    color: var(--ice-white);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.2s ease;
+}
+
+.action-link:hover {
+    gap: 14px;
+}
+
+.side-projects-stack {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-card-mini {
+    background-color: var(--card-surface);
+    border: 1px solid rgba(235, 241, 252, 0.03);
+    padding: 24px;
+    border-radius: 8px;
+    display: flex;
+    gap: 20px;
+    transition: border-color 0.3s ease;
+}
+
+.project-card-mini:hover {
+    border-color: var(--subtle-border);
+}
+
+.mini-icon {
+    font-size: 1.25rem;
+    color: #3b82f6;
+    margin-top: 4px;
+}
+
+.mini-content h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.mini-content p {
+    font-size: 0.9rem;
+    color: var(--slate-muted);
+    margin-bottom: 12px;
+}
+
+.simple-link {
+    color: var(--ice-white);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* --- Optimized Lab Design Environment --- */
+.lab-workspace {
+    background-color: var(--card-surface);
+}
+
+.lab-title-center {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto 60px;
+}
+
+.lab-title-center p {
+    color: var(--slate-muted);
+    font-size: 0.95rem;
+}
+
+.lab-display-card {
+    max-width: 1100px; /* Expanded layout bounds to yield extra visual size */
+    margin: 0 auto;
+    background-color: var(--raw-black);
+    border: 1px solid var(--subtle-border);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.lab-image-pane {
+    flex: 1.8; /* Expanded to maximize workspace screenshot footprint */
+    aspect-ratio: 16 / 9;
+    background-color: var(--navy-abyss);
+    overflow: hidden;
+    border-right: 1px solid var(--subtle-border);
+}
+
+.lab-image-pane img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lab-display-card:hover .lab-image-pane img {
+    transform: scale(1.02);
+}
+
+.lab-details-pane {
+    flex: 1;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.lab-index {
+    color: #3b82f6;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.lab-details-pane h3 {
+    font-size: 1.65rem;
+    margin-bottom: 14px;
+    letter-spacing: -0.5px;
+}
+
+.lab-details-pane p {
+    font-size: 0.95rem;
+    color: var(--slate-muted);
+    line-height: 1.7;
+    margin-bottom: 28px;
+}
+
+.lab-tech-pills span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    background-color: rgba(7, 25, 61, 0.4);
+    border: 1px solid rgba(235, 241, 252, 0.1);
+    padding: 6px 12px;
+    border-radius: 4px;
+    margin-right: 6px;
+    display: inline-block;
+}
+
+/* --- Profile Biography Grid --- */
+.profile-biography {
+    background-color: var(--raw-black);
+}
+
+.bio-grid {
+    display: flex;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.bio-statement {
+    flex: 1;
+}
+
+.bio-statement p {
+    font-size: 1.1rem;
+    color: var(--ice-white);
+    opacity: 0.85;
+    line-height: 1.7;
+}
+
+.competency-matrix {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.matrix-card {
+    background-color: var(--card-surface);
+    border: 1px solid var(--subtle-border);
+    padding: 24px;
+    border-radius: 8px;
+}
+
+.matrix-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.matrix-card p {
+    font-size: 0.9rem;
+    color: var(--slate-muted);
+}
+
+/* --- Clean Footer System --- */
+footer {
+    background-color: var(--raw-black);
+    padding: 100px 6% 40px;
+}
+
+.footer-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-cta {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.footer-cta h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+.footer-cta p {
+    color: var(--slate-muted);
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.social-links a {
+    color: var(--ice-white);
+    font-size: 1.35rem;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.social-links a:hover {
+    opacity: 1;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(235, 241, 252, 0.05);
+    padding-top: 30px;
+    text-align: center;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    color: #334155 !important;
+}
+
+/* --- Adaptive Viewports --- */
+@media (max-width: 1024px) {
+    .asymmetric-project-grid, .bio-grid {
+        flex-direction: column;
+    }
+    
+    .lab-display-card {
+        flex-direction: column;
+        max-width: 650px;
+    }
+
+    .lab-image-pane {
+        flex: none;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--subtle-border);
+    }
+    
+    .lab-details-pane {
+        padding: 35px 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px 5%;
+    }
+    
+    nav ul {
+        display: none;
+    }
+
+    .hero-split-section {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 140px;
+    }
+
+    .hero-left-panel h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-cta-group {
+        justify-content: center;
+    }
+
+    .project-card-large {
+        padding: 24px;
+    }
+
+    .footer-cta h2 {
+        font-size: 2rem;
+    }
+}
+
+/* ==========================================================================
+   Showcase Subpage Layout Matrix: Landscape Engineering Rules
+   ========================================================================== */
+
+.landscape-hero-bg {
+    background: radial-gradient(circle at 10% 90%, var(--navy-abyss) 0%, var(--raw-black) 70%);
+}
+
+.showcase-container.landscape-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 6%;
+}
+
+.landscape-layout .showcase-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 65px;
+    background-color: var(--card-surface);
+    padding: 50px;
+    border-radius: 12px;
+    border: 1px solid rgba(235, 241, 252, 0.02);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.landscape-layout .showcase-item:hover {
+    border-color: var(--subtle-border);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(7, 25, 61, 0.15);
+}
+
+.landscape-layout .showcase-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.landscape-frame {
+    flex: 1.3;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 6px;
+    border: 1px solid rgba(235, 241, 252, 0.08);
+    background-color: var(--raw-black);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.landscape-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.landscape-layout .showcase-item:hover .landscape-frame img {
+    transform: scale(1.03);
+}
+
+.landscape-layout .showcase-details {
+    flex: 1;
+}
+
+.landscape-layout .showcase-details h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 6px;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.landscape-layout .tech-stack {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.landscape-layout .tech-stack span {
+    background-color: var(--raw-black);
+    color: var(--ice-white);
+    border: 1px solid rgba(235, 241, 252, 0.08);
+    padding: 10px 16px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: border-color 0.2s ease;
+}
+
+.landscape-layout .tech-stack span:hover {
+    border-color: rgba(59, 130, 246, 0.5);
+}
+
+.landscape-layout .tech-stack span i {
+    color: #3b82f6;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 950px) {
+    .showcase-container.landscape-layout {
+        gap: 50px;
+        padding-top: 60px;
+    }
+
+    .landscape-layout .showcase-item, 
+    .landscape-layout .showcase-item.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        padding: 30px;
+    }
+
+    .landscape-frame {
+        width: 100%;
+        flex: none;
+    }
+
+    .landscape-layout .showcase-details h2 {
+        font-size: 1.65rem;
+    }
+
+    .landscape-layout .tech-stack {
+        justify-content: center;
+    }
+}
